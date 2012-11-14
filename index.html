@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Variable Naming Convention</title>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+        @charset "UTF-8";
+
+	    html {
+		    background: #FFF5CC;
+	    }
+
+	    body {
+		    background: white;
+		    border: 1px solid;		    
+            font-family: Verdana, sans-serif;
+		    margin: 1em auto;
+		    min-width: 40em;
+		    padding: 1em;
+		    width: 50%;
+		    
+		    border-radius: 1em;
+	    }
+
+	    a {
+		    color: #000;
+	    }
+
+        h1, h2, h3, h4, .main {
+            font-family: 'Droid Sans', Verdana, sans-serif;
+            font-weight: normal;
+        }
+	    h3 {
+		    border-top: 1px solid;
+		    margin: 0-1em;
+		    padding: 0.5em 1em;
+		    width: 100%;
+	    }
+	    
+	    svg {
+	        vertical-align: bottom;
+	    }
+
+	    .main {
+		    background-color: #FFCC00;
+		    border: 1px solid black;
+		    display: inline-block;
+		    height: 1.2em;
+		    line-height: 1em;
+		    margin-right: 0.5em;
+		    text-align: center;
+		    width: 1.2em;
+		    
+		    border-radius: 0.5em;
+	    }
+
+	    /* All CSS mouse-over state*/
+	    .reasoning {
+		    color: #666;
+		    background-color: #FFF5CC;
+		    display: inline;
+		    font-style: italic;
+	    }
+
+	    .reasoning span {
+		    border-bottom: 1px dashed;
+		    display: none;
+	    }
+
+	    .reasoning span.handle {
+		    display: inline;
+	    }
+
+	    .reasoning:hover span {
+		    border-bottom: none;
+		    display: inline;
+	    }
+
+	    .reasoning:hover span.handle {
+		    display: none;
+	    }
+
+	    .small {
+		    font-size: 0.8em;
+	    }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <h1>
+	    Variable Naming Convention
+    </h1>
+    <p>
+        For variables we use a derived form of Systems <a href="http://en.wikipedia.org/wiki/Hungarian_notation" title="Hungarian notation > wikipedia">Hungarian notation</a>
+        that consist of 3 parts: the scope, type and name of a variable.
+    </p>
+        <pre class="">$<span class="small scope">scope_</span><span
+		        class="small type">type</span>VarName</pre>
+
+    <p>
+        For variables in a closed scope we don't need a scope flag, so
+        they would be named thusly:</p>
+    <pre class="">$<span class="small type">type</span>VarName</pre>
+
+    <h2>Syntax Diagram</h2>
+    <pre>
+                      scope     type         VarName
+	    &darr; &darr; &darr;
+	    <em>variable</em> ::= [<strong>gmpt</strong>]_[<strong>abdeinorsu</strong>](<strong>[A-Z][a-zA-Z0-9]*</strong>)
+    </pre>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink" width="546" height="448">
+    <defs>
+        <style type="text/css">
+            @namespace "http://www.w3.org/2000/svg";
+
+            .line {
+	            fill: none;
+	            stroke: #332900;
+            }
+
+            filled {
+	            fill: #332900;
+	            stroke: none;
+            }
+
+            text {
+	            font-family: Verdana, sans-serif;
+	            font-size: 12px;
+	            fill: #4D3D00;
+            }
+
+            text.terminal {
+	            font-family: Verdana, Sans-serif;
+	            font-size: 12px;
+	            fill: #4D3D00;
+	            font-weight: bold;
+            }
+
+            rect, circle, polygon {
+	            fill: #332900;
+	            stroke: #332900;
+            }
+
+            rect.terminal {
+	            fill: #FFCC00;
+	            stroke: #332900;
+            }
+
+            rect.nonterminal {
+	            fill: #FFEB99;
+	            stroke: #332900;
+            }
+
+            rect.text {
+	            fill: none;
+	            stroke: none;
+            }
+
+            polygon.regexp {
+	            fill: #FFF5CC;
+	            stroke: #332900;
+            }
+        </style>
+    </defs>
+    <polygon points="9 33 1 29 1 37" class="filled"/>
+    <polygon points="17 33 9 29 9 37" class="filled"/>
+    <line x1="17" y1="33" x2="19" y2="33" class="line"/>
+    <rect x="51" y="19" width="28" height="32" rx="10"/>
+    <rect x="49" y="17" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="59" y="37">g</text>
+    <line x1="39" y1="33" x2="49" y2="33" class="line"/>
+    <line x1="77" y1="33" x2="87" y2="33" class="line"/>
+    <line x1="87" y1="33" x2="91" y2="33" class="line"/>
+    <line x1="19" y1="33" x2="39" y2="33" class="line"/>
+    <line x1="91" y1="33" x2="111" y2="33" class="line"/>
+    <path d="M19 33 Q29 33 29 43" class="line"/>
+    <path d="M101 43 Q101 33 111 33" class="line"/>
+    <line x1="29" y1="43" x2="29" y2="67" class="line"/>
+    <line x1="101" y1="67" x2="101" y2="43" class="line"/>
+    <path d="M29 67 Q29 77 39 77" class="line"/>
+    <path d="M91 77 Q101 77 101 67" class="line"/>
+    <rect x="51" y="63" width="32" height="32" rx="10"/>
+    <rect x="49" y="61" width="32" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="59" y="81">m</text>
+    <line x1="39" y1="77" x2="49" y2="77" class="line"/>
+    <line x1="81" y1="77" x2="91" y2="77" class="line"/>
+    <line x1="29" y1="67" x2="29" y2="87" class="line"/>
+    <line x1="101" y1="87" x2="101" y2="67" class="line"/>
+    <line x1="29" y1="87" x2="29" y2="111" class="line"/>
+    <line x1="101" y1="111" x2="101" y2="87" class="line"/>
+    <path d="M29 111 Q29 121 39 121" class="line"/>
+    <path d="M91 121 Q101 121 101 111" class="line"/>
+    <rect x="51" y="107" width="28" height="32" rx="10"/>
+    <rect x="49" y="105" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="59" y="125">p</text>
+    <line x1="39" y1="121" x2="49" y2="121" class="line"/>
+    <line x1="77" y1="121" x2="87" y2="121" class="line"/>
+    <line x1="87" y1="121" x2="91" y2="121" class="line"/>
+    <line x1="29" y1="111" x2="29" y2="131" class="line"/>
+    <line x1="101" y1="131" x2="101" y2="111" class="line"/>
+    <line x1="29" y1="131" x2="29" y2="155" class="line"/>
+    <line x1="101" y1="155" x2="101" y2="131" class="line"/>
+    <path d="M29 155 Q29 165 39 165" class="line"/>
+    <path d="M91 165 Q101 165 101 155" class="line"/>
+    <rect x="51" y="151" width="24" height="32" rx="10"/>
+    <rect x="49" y="149" width="24" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="59" y="169">t</text>
+    <line x1="39" y1="165" x2="49" y2="165" class="line"/>
+    <line x1="73" y1="165" x2="83" y2="165" class="line"/>
+    <line x1="83" y1="165" x2="91" y2="165" class="line"/>
+    <a xlink:href="#_" xlink:title="_">
+        <rect x="123" y="19" width="28" height="32"/>
+        <rect x="121" y="17" width="28" height="32" class="nonterminal"/>
+        <text class="nonterminal" x="131" y="37">_</text>
+    </a>
+    <line x1="111" y1="33" x2="121" y2="33" class="line"/>
+    <line x1="149" y1="33" x2="159" y2="33" class="line"/>
+    <rect x="191" y="19" width="28" height="32" rx="10"/>
+    <rect x="189" y="17" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="37">a</text>
+    <line x1="179" y1="33" x2="189" y2="33" class="line"/>
+    <line x1="217" y1="33" x2="227" y2="33" class="line"/>
+    <line x1="159" y1="33" x2="179" y2="33" class="line"/>
+    <line x1="227" y1="33" x2="247" y2="33" class="line"/>
+    <path d="M159 33 Q169 33 169 43" class="line"/>
+    <path d="M237 43 Q237 33 247 33" class="line"/>
+    <line x1="169" y1="43" x2="169" y2="67" class="line"/>
+    <line x1="237" y1="67" x2="237" y2="43" class="line"/>
+    <path d="M169 67 Q169 77 179 77" class="line"/>
+    <path d="M227 77 Q237 77 237 67" class="line"/>
+    <rect x="191" y="63" width="28" height="32" rx="10"/>
+    <rect x="189" y="61" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="81">b</text>
+    <line x1="179" y1="77" x2="189" y2="77" class="line"/>
+    <line x1="217" y1="77" x2="227" y2="77" class="line"/>
+    <line x1="169" y1="67" x2="169" y2="87" class="line"/>
+    <line x1="237" y1="87" x2="237" y2="67" class="line"/>
+    <line x1="169" y1="87" x2="169" y2="111" class="line"/>
+    <line x1="237" y1="111" x2="237" y2="87" class="line"/>
+    <path d="M169 111 Q169 121 179 121" class="line"/>
+    <path d="M227 121 Q237 121 237 111" class="line"/>
+    <rect x="191" y="107" width="28" height="32" rx="10"/>
+    <rect x="189" y="105" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="125">d</text>
+    <line x1="179" y1="121" x2="189" y2="121" class="line"/>
+    <line x1="217" y1="121" x2="227" y2="121" class="line"/>
+    <line x1="169" y1="111" x2="169" y2="131" class="line"/>
+    <line x1="237" y1="131" x2="237" y2="111" class="line"/>
+    <line x1="169" y1="131" x2="169" y2="155" class="line"/>
+    <line x1="237" y1="155" x2="237" y2="131" class="line"/>
+    <path d="M169 155 Q169 165 179 165" class="line"/>
+    <path d="M227 165 Q237 165 237 155" class="line"/>
+    <rect x="191" y="151" width="28" height="32" rx="10"/>
+    <rect x="189" y="149" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="169">e</text>
+    <line x1="179" y1="165" x2="189" y2="165" class="line"/>
+    <line x1="217" y1="165" x2="227" y2="165" class="line"/>
+    <line x1="169" y1="155" x2="169" y2="175" class="line"/>
+    <line x1="237" y1="175" x2="237" y2="155" class="line"/>
+    <line x1="169" y1="175" x2="169" y2="199" class="line"/>
+    <line x1="237" y1="199" x2="237" y2="175" class="line"/>
+    <path d="M169 199 Q169 209 179 209" class="line"/>
+    <path d="M227 209 Q237 209 237 199" class="line"/>
+    <rect x="191" y="195" width="24" height="32" rx="10"/>
+    <rect x="189" y="193" width="24" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="213">i</text>
+    <line x1="179" y1="209" x2="189" y2="209" class="line"/>
+    <line x1="213" y1="209" x2="223" y2="209" class="line"/>
+    <line x1="223" y1="209" x2="227" y2="209" class="line"/>
+    <line x1="169" y1="199" x2="169" y2="219" class="line"/>
+    <line x1="237" y1="219" x2="237" y2="199" class="line"/>
+    <line x1="169" y1="219" x2="169" y2="243" class="line"/>
+    <line x1="237" y1="243" x2="237" y2="219" class="line"/>
+    <path d="M169 243 Q169 253 179 253" class="line"/>
+    <path d="M227 253 Q237 253 237 243" class="line"/>
+    <rect x="191" y="239" width="28" height="32" rx="10"/>
+    <rect x="189" y="237" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="257">n</text>
+    <line x1="179" y1="253" x2="189" y2="253" class="line"/>
+    <line x1="217" y1="253" x2="227" y2="253" class="line"/>
+    <line x1="169" y1="243" x2="169" y2="263" class="line"/>
+    <line x1="237" y1="263" x2="237" y2="243" class="line"/>
+    <line x1="169" y1="263" x2="169" y2="287" class="line"/>
+    <line x1="237" y1="287" x2="237" y2="263" class="line"/>
+    <path d="M169 287 Q169 297 179 297" class="line"/>
+    <path d="M227 297 Q237 297 237 287" class="line"/>
+    <rect x="191" y="283" width="28" height="32" rx="10"/>
+    <rect x="189" y="281" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="301">o</text>
+    <line x1="179" y1="297" x2="189" y2="297" class="line"/>
+    <line x1="217" y1="297" x2="227" y2="297" class="line"/>
+    <line x1="169" y1="287" x2="169" y2="307" class="line"/>
+    <line x1="237" y1="307" x2="237" y2="287" class="line"/>
+    <line x1="169" y1="307" x2="169" y2="331" class="line"/>
+    <line x1="237" y1="331" x2="237" y2="307" class="line"/>
+    <path d="M169 331 Q169 341 179 341" class="line"/>
+    <path d="M227 341 Q237 341 237 331" class="line"/>
+    <rect x="191" y="327" width="26" height="32" rx="10"/>
+    <rect x="189" y="325" width="26" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="345">r</text>
+    <line x1="179" y1="341" x2="189" y2="341" class="line"/>
+    <line x1="215" y1="341" x2="225" y2="341" class="line"/>
+    <line x1="225" y1="341" x2="227" y2="341" class="line"/>
+    <line x1="169" y1="331" x2="169" y2="351" class="line"/>
+    <line x1="237" y1="351" x2="237" y2="331" class="line"/>
+    <line x1="169" y1="351" x2="169" y2="375" class="line"/>
+    <line x1="237" y1="375" x2="237" y2="351" class="line"/>
+    <path d="M169 375 Q169 385 179 385" class="line"/>
+    <path d="M227 385 Q237 385 237 375" class="line"/>
+    <rect x="191" y="371" width="26" height="32" rx="10"/>
+    <rect x="189" y="369" width="26" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="389">s</text>
+    <line x1="179" y1="385" x2="189" y2="385" class="line"/>
+    <line x1="215" y1="385" x2="225" y2="385" class="line"/>
+    <line x1="225" y1="385" x2="227" y2="385" class="line"/>
+    <line x1="169" y1="375" x2="169" y2="395" class="line"/>
+    <line x1="237" y1="395" x2="237" y2="375" class="line"/>
+    <line x1="169" y1="395" x2="169" y2="419" class="line"/>
+    <line x1="237" y1="419" x2="237" y2="395" class="line"/>
+    <path d="M169 419 Q169 429 179 429" class="line"/>
+    <path d="M227 429 Q237 429 237 419" class="line"/>
+    <rect x="191" y="415" width="28" height="32" rx="10"/>
+    <rect x="189" y="413" width="28" height="32" class="terminal" rx="10"/>
+    <text class="terminal" x="199" y="433">u</text>
+    <line x1="179" y1="429" x2="189" y2="429" class="line"/>
+    <line x1="217" y1="429" x2="227" y2="429" class="line"/>
+    <polygon points="259 35 266 19 312 19 319 35 312 51 266 51"/>
+    <polygon points="257 33 264 17 310 17 317 33 310 49 264 49"
+             class="regexp"/>
+    <text class="regexp" x="272" y="37">[A-Z]</text>
+    <line x1="247" y1="33" x2="257" y2="33" class="line"/>
+    <line x1="317" y1="33" x2="327" y2="33" class="line"/>
+    <polygon points="399 35 406 19 452 19 459 35 452 51 406 51"/>
+    <polygon points="397 33 404 17 450 17 457 33 450 49 404 49"
+             class="regexp"/>
+    <text class="regexp" x="412" y="37">[a-z]</text>
+    <line x1="387" y1="33" x2="397" y2="33" class="line"/>
+    <line x1="457" y1="33" x2="467" y2="33" class="line"/>
+    <line x1="367" y1="33" x2="387" y2="33" class="line"/>
+    <line x1="467" y1="33" x2="487" y2="33" class="line"/>
+    <path d="M367 33 Q377 33 377 43" class="line"/>
+    <path d="M477 43 Q477 33 487 33" class="line"/>
+    <line x1="377" y1="43" x2="377" y2="67" class="line"/>
+    <line x1="477" y1="67" x2="477" y2="43" class="line"/>
+    <path d="M377 67 Q377 77 387 77" class="line"/>
+    <path d="M467 77 Q477 77 477 67" class="line"/>
+    <polygon points="399 79 406 63 452 63 459 79 452 95 406 95"/>
+    <polygon points="397 77 404 61 450 61 457 77 450 93 404 93"
+             class="regexp"/>
+    <text class="regexp" x="412" y="81">[A-Z]</text>
+    <line x1="387" y1="77" x2="397" y2="77" class="line"/>
+    <line x1="457" y1="77" x2="467" y2="77" class="line"/>
+    <line x1="377" y1="67" x2="377" y2="87" class="line"/>
+    <line x1="477" y1="87" x2="477" y2="67" class="line"/>
+    <line x1="377" y1="87" x2="377" y2="111" class="line"/>
+    <line x1="477" y1="111" x2="477" y2="87" class="line"/>
+    <path d="M377 111 Q377 121 387 121" class="line"/>
+    <path d="M467 121 Q477 121 477 111" class="line"/>
+    <polygon points="399 123 406 107 452 107 459 123 452 139 406 139"/>
+    <polygon points="397 121 404 105 450 105 457 121 450 137 404 137"
+             class="regexp"/>
+    <text class="regexp" x="412" y="125">[0-9]</text>
+    <line x1="387" y1="121" x2="397" y2="121" class="line"/>
+    <line x1="457" y1="121" x2="467" y2="121" class="line"/>
+    <path d="M347 33 L367 33 M366 33 Q357 33 357 23 L357 11 Q357 1 367 1"
+          class="line"/>
+    <path d="M487 33 L507 33 M487 33 Q497 33 497 23 L497 11 Q497 1 487 1"
+          class="line"/>
+    <line x1="367" y1="1" x2="377" y2="1" class="line"/>
+    <line x1="377" y1="1" x2="487" y2="1" class="line"/>
+    <line x1="327" y1="33" x2="347" y2="33" class="line"/>
+    <line x1="507" y1="33" x2="527" y2="33" class="line"/>
+    <path d="M327 33 Q337 33 337 43" class="line"/>
+    <path d="M517 43 Q517 33 527 33" class="line"/>
+    <line x1="337" y1="43" x2="337" y2="145" class="line"/>
+    <line x1="517" y1="145" x2="517" y2="43" class="line"/>
+    <path d="M337 145 Q337 155 347 155" class="line"/>
+    <path d="M507 155 Q517 155 517 145" class="line"/>
+    <line x1="347" y1="155" x2="357" y2="155" class="line"/>
+    <line x1="357" y1="155" x2="507" y2="155" class="line"/>
+    <line x1="530" y1="33" x2="527" y2="33" class="line"/>
+    <polygon points="537 33 545 29 545 37" class="filled"/>
+    <polygon points="537 33 529 29 529 37" class="filled"/>
+    </svg>
+<sup>Generated using the <a href="http://railroad.my28msec.com/">Railroad Diagram Generator</a></sup>
+    <h3>Scope</h3>
+    <p>
+        To help identify where variables come from and for easier
+        fetching of name-lists in scope-aware editors, we prepend a
+        scope flag to variables that aren't in a function/method's closed scope.
+        Available flags for the scope are:
+    </p>
+    <ul>
+        <!-- li>
+            <span class="main"><sup>_</sup></span> for a class member that we use to work
+            "magic", like the <code>$__aMETA</code> array which (amongst other
+            things) contains what the scope is of module attributes and classes.
+        </li -->
+        <li>
+            <span class="main">g</span> for global variables <span
+		        class="small">(These shouldn't really exist, 'cause we <em>really</em>
+            don't want any global var lying about. Use <code>$_SERVER</code>, <code>$_SESSION</code> or <code>$_SETTINGS</code>
+            instead) </span>
+        </li>
+        <li>
+            <span class="main">t</span> for localized temporary variables
+            <span class="small">(variables that are created only to be
+            temporaraly used and then overwritten or discarded, as often occurs in
+            loops.
+            <!--
+            You could also just use a single letter variable like <code>$n</code>,
+            <code>$s</code>, etc.
+             -->
+            )
+
+            </span>
+
+        </li>
+        <li>
+            <span class="main">p</span> for a function/method parameter
+        </li>
+        <li>
+            <span class="main">m</span> for class members
+        </li>
+    </ul>
+
+    <h3>Type</h3>
+    <p>
+        Because PHP is a loosely typed language, undesired effects (and
+        thus bugs) can easily arise if you do not check your var types properly.
+        Because we don't want to have to skip back to the point where a var was
+        set (and because we like readable code), we prepend a type flag to
+        variables. Please be <em>very</em> aware of the fact that this flag is
+        mostly a <span class="">hint</span> and can't be trusted blindly,
+        even when taking our Best Practises into account. Available flags for
+        variable types are:
+    </p>
+
+	<h4>Compound Types</h4>
+    <ul>
+        <li>
+            <span class="main">a</span> for an <strong>Array</strong>
+        </li>
+        <li>
+            <span class="main">e</span> for an <strong>Exception</strong>
+
+            <div class="reasoning"><span class="handle">reasoning</span>
+                    <span>
+                        Dispite the fact that Exceptions are objects we feel they differ
+                        enought from "normal" objects to validate their own type.
+                    </span>
+            </div>
+        </li>
+        <li>
+            <span class="main">o</span> for an <strong>Object</strong> <span
+		        class="small">(Please
+                note this means an instance of a class, not the class itself. If it has
+                not been constructed, it is <em>not</em> an object)</span>
+        </li>
+    </ul>
+
+	<h4>Scalar Types</h4>
+    <ul>
+        <li>
+            <span class="main">u</span> for an
+            <strong>unknown</strong> type <span
+		        class="small">(this should <em>only</em> be used for skeleton
+            methods where it has not yet been decided what type a parameter should
+            be.</span></li>
+        <li>
+            <span class="main">v</span> for a
+            <strong>variant</strong> type <span
+		        class="small">(used only when updating old/deprecated code to
+            the current coding convention. Newer code should adhere to the rule
+            "Use type safe coding") </span></li>
+        <li>
+            <span class="main">n</span> for a <strong>numeric</strong> string (an
+                                        integer /
+                                        double / decimal / float represented as a
+                                        string)
+            <div class="reasoning"><span class="handle">reasoning</span> <span>Because
+            PHP is a loosely type cast language, any variable that needs to be an
+            integer or double should be type cast as such as early as possible in the
+            code. The use of <code>n</code> (numeric) anywhere in the bussiness logic
+            should be a warning that bad things might happen. (PHP interprets "1" and 1
+            pretty much the same for MOST situations, but the result may be different
+            than you think. Avoid speculation. <em>Type cast</em>!)</span></div>
+        </li>
+        <li>
+            <span class="main">i</span> for an <strong>integer</strong> <span
+		        class="small">(and
+            I do mean <em>integer</em>, not a numeric string!)</span></li>
+        <li>
+            <span class="main">d</span> for a <strong>decimal</strong>/double/float
+        </li>
+        <li>
+            <span class="main">b</span> for a <strong>boolean</strong></li>
+        <li>
+            <span class="main">s</span> for a <strong>string</strong></li>
+    </ul>
+
+	<h4>Special Types</h4>
+    <ul>
+        <!--
+                         <li><span class="main">f</span> for a File Pointer <span
+                            class="small">(although this is technically a resource I feel
+                        it is a usefull distinction to make)</span></li>
+                         -->
+        <li>
+            <span class="main">r</span> for a <a
+		        href="http://php.net/manual/language.types.resource.php"><strong>Resource</strong></a>
+            <span class="small">(see <a
+		            href="http://php.net/manual/resource.php">http://php.net/manual/resource.php</a>
+            for a full list of Resource Types)</span></li>
+    </ul>
+    
+	<h3>Name</h3>
+    <ul>
+        <li>
+	        <span class="">Variable names should suggest a
+        property or noun.</span> UserName, Width, etc.</li>
+        <li>
+	        <span class="">Names should be descriptive, but
+        also concise.</span> Wherever possible, keep variable names to under 3 
+        words or 15 characters but be prepared to sacrifice a few extra 
+        characters to improve clarity.
+        </li>
+    </ul>
+    <script>
+        $('span.main').each(function(){
+            var $this, sText, sReplacement;
+            $this = $(this);
+            sText = $this.text();
+            sReplacement = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="28">'
+            + '<rect x="2" y="3" width="21" height="24" rx="6"/>'
+            + '<rect x="1" y="1" width="21" height="24" class="terminal" rx="6"/>'
+            + '<text class="terminal" x="8" y="16">' + sText + '</text>'
+            + '</svg>';
+
+            $this.replaceWith($(sReplacement));
+        });
+    </script>
+</body>
