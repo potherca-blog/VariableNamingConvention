@@ -1,7 +1,8 @@
 VariableNamingConvention
 ========================
 
-This  repo contains a web page that explains the Variable Naming Convention I use in most of my PHP projects and code examples.
+This  repo contains a web page that explains the Variable Naming Convention I use in most of my PHP and Javascript projects (and code examples).
+
 To link to it from code the following header is recommended:
 
 
