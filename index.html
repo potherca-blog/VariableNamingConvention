@@ -6,83 +6,83 @@
         @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
         @charset "UTF-8";
 
-	    html {
-		    background: #FFF5CC;
-	    }
+        html {
+            background: #FFF5CC;
+        }
 
-	    body {
-		    background: white;
-		    border: 1px solid;		    
+        body {
+            background: white;
+            border: 1px solid;
             font-family: Verdana, sans-serif;
-		    margin: 1em auto;
-		    min-width: 40em;
-		    padding: 1em;
-		    width: 50%;
-		    
-		    border-radius: 1em;
-	    }
+            margin: 1em auto;
+            min-width: 40em;
+            padding: 1em;
+            width: 50%;
 
-	    a {
-		    color: #000;
-	    }
+            border-radius: 1em;
+        }
+
+        a {
+            color: #000;
+        }
 
         h1, h2, h3, h4, .main {
             font-family: 'Droid Sans', Verdana, sans-serif;
             font-weight: normal;
         }
-	    h3 {
-		    border-top: 1px solid;
-		    margin: 0-1em;
-		    padding: 0.5em 1em;
-		    width: 100%;
-	    }
-	    
-	    svg {
-	        vertical-align: bottom;
-	    }
+        h3 {
+            border-top: 1px solid;
+            margin: 0-1em;
+            padding: 0.5em 1em;
+            width: 100%;
+        }
 
-	    .main {
-		    background-color: #FFCC00;
-		    border: 1px solid black;
-		    display: inline-block;
-		    height: 1.2em;
-		    line-height: 1em;
-		    margin-right: 0.5em;
-		    text-align: center;
-		    width: 1.2em;
-		    
-		    border-radius: 0.5em;
-	    }
+        svg {
+            vertical-align: bottom;
+        }
 
-	    /* All CSS mouse-over state*/
-	    .reasoning {
-		    color: #666;
-		    background-color: #FFF5CC;
-		    display: inline;
-		    font-style: italic;
-	    }
+        .main {
+            background-color: #FFCC00;
+            border: 1px solid black;
+            display: inline-block;
+            height: 1.2em;
+            line-height: 1em;
+            margin-right: 0.5em;
+            text-align: center;
+            width: 1.2em;
 
-	    .reasoning span {
-		    border-bottom: 1px dashed;
-		    display: none;
-	    }
+            border-radius: 0.5em;
+        }
 
-	    .reasoning span.handle {
-		    display: inline;
-	    }
+        /* All CSS mouse-over state*/
+        .reasoning {
+            color: #666;
+            background-color: #FFF5CC;
+            display: inline;
+            font-style: italic;
+        }
 
-	    .reasoning:hover span {
-		    border-bottom: none;
-		    display: inline;
-	    }
+        .reasoning span {
+            border-bottom: 1px dashed;
+            display: none;
+        }
 
-	    .reasoning:hover span.handle {
-		    display: none;
-	    }
+        .reasoning span.handle {
+            display: inline;
+        }
 
-	    .small {
-		    font-size: 0.8em;
-	    }
+        .reasoning:hover span {
+            border-bottom: none;
+            display: inline;
+        }
+
+        .reasoning:hover span.handle {
+            display: none;
+        }
+
+        .small {
+            font-size: 0.8em;
+        }
     </style>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
@@ -91,14 +91,14 @@
 <body>
 
     <h1>
-	    Variable Naming Convention
+        Variable Naming Convention
     </h1>
     <p>
         For variables we use a derived form of Systems <a href="http://en.wikipedia.org/wiki/Hungarian_notation" title="Hungarian notation > wikipedia">Hungarian notation</a>
         that consist of 3 parts: the scope, type and name of a variable.
     </p>
         <pre class="">$<span class="small scope">scope_</span><span
-		        class="small type">type</span>VarName</pre>
+                class="small type">type</span>VarName</pre>
 
     <p>
         For variables in a closed scope we don't need a scope flag, so
@@ -108,8 +108,8 @@
     <h2>Syntax Diagram</h2>
     <pre>
                       scope     type         VarName
-	    &darr; &darr; &darr;
-	    <em>variable</em> ::= [<strong>gmpt</strong>]_[<strong>abdeinorsu</strong>](<strong>[A-Z][a-zA-Z0-9]*</strong>)
+        &darr; &darr; &darr;
+        <em>variable</em> ::= [<strong>gmpt</strong>]_[<strong>abdeinorsu</strong>](<strong>[A-Z][a-zA-Z0-9]*</strong>)
     </pre>
 
 
@@ -120,51 +120,51 @@
             @namespace "http://www.w3.org/2000/svg";
 
             .line {
-	            fill: none;
-	            stroke: #332900;
+                fill: none;
+                stroke: #332900;
             }
 
             filled {
-	            fill: #332900;
-	            stroke: none;
+                fill: #332900;
+                stroke: none;
             }
 
             text {
-	            font-family: Verdana, sans-serif;
-	            font-size: 12px;
-	            fill: #4D3D00;
+                font-family: Verdana, sans-serif;
+                font-size: 12px;
+                fill: #4D3D00;
             }
 
             text.terminal {
-	            font-family: Verdana, Sans-serif;
-	            font-size: 12px;
-	            fill: #4D3D00;
-	            font-weight: bold;
+                font-family: Verdana, Sans-serif;
+                font-size: 12px;
+                fill: #4D3D00;
+                font-weight: bold;
             }
 
             rect, circle, polygon {
-	            fill: #332900;
-	            stroke: #332900;
+                fill: #332900;
+                stroke: #332900;
             }
 
             rect.terminal {
-	            fill: #FFCC00;
-	            stroke: #332900;
+                fill: #FFCC00;
+                stroke: #332900;
             }
 
             rect.nonterminal {
-	            fill: #FFEB99;
-	            stroke: #332900;
+                fill: #FFEB99;
+                stroke: #332900;
             }
 
             rect.text {
-	            fill: none;
-	            stroke: none;
+                fill: none;
+                stroke: none;
             }
 
             polygon.regexp {
-	            fill: #FFF5CC;
-	            stroke: #332900;
+                fill: #FFF5CC;
+                stroke: #332900;
             }
         </style>
     </defs>
@@ -404,7 +404,7 @@
         </li -->
         <li>
             <span class="main">g</span> for global variables <span
-		        class="small">(These shouldn't really exist, 'cause we <em>really</em>
+                class="small">(These shouldn't really exist, 'cause we <em>really</em>
             don't want any global var lying about. Use <code>$_SERVER</code>, <code>$_SESSION</code> or <code>$_SETTINGS</code>
             instead) </span>
         </li>
@@ -442,7 +442,7 @@
         variable types are:
     </p>
 
-	<h4>Compound Types</h4>
+    <h4>Compound Types</h4>
     <ul>
         <li>
             <span class="main">a</span> for an <strong>Array</strong>
@@ -459,24 +459,24 @@
         </li>
         <li>
             <span class="main">o</span> for an <strong>Object</strong> <span
-		        class="small">(Please
+                class="small">(Please
                 note this means an instance of a class, not the class itself. If it has
                 not been constructed, it is <em>not</em> an object)</span>
         </li>
     </ul>
 
-	<h4>Scalar Types</h4>
+    <h4>Scalar Types</h4>
     <ul>
         <li>
             <span class="main">u</span> for an
             <strong>unknown</strong> type <span
-		        class="small">(this should <em>only</em> be used for skeleton
+                class="small">(this should <em>only</em> be used for skeleton
             methods where it has not yet been decided what type a parameter should
             be.</span></li>
         <li>
             <span class="main">v</span> for a
             <strong>variant</strong> type <span
-		        class="small">(used only when updating old/deprecated code to
+                class="small">(used only when updating old/deprecated code to
             the current coding convention. Newer code should adhere to the rule
             "Use type safe coding") </span></li>
         <li>
@@ -494,7 +494,7 @@
         </li>
         <li>
             <span class="main">i</span> for an <strong>integer</strong> <span
-		        class="small">(and
+                class="small">(and
             I do mean <em>integer</em>, not a numeric string!)</span></li>
         <li>
             <span class="main">d</span> for a <strong>decimal</strong>/double/float
@@ -505,7 +505,7 @@
             <span class="main">s</span> for a <strong>string</strong></li>
     </ul>
 
-	<h4>Special Types</h4>
+    <h4>Special Types</h4>
     <ul>
         <!--
                          <li><span class="main">f</span> for a File Pointer <span
@@ -514,19 +514,19 @@
                          -->
         <li>
             <span class="main">r</span> for a <a
-		        href="http://php.net/manual/language.types.resource.php"><strong>Resource</strong></a>
+                href="http://php.net/manual/language.types.resource.php"><strong>Resource</strong></a>
             <span class="small">(see <a
-		            href="http://php.net/manual/resource.php">http://php.net/manual/resource.php</a>
+                    href="http://php.net/manual/resource.php">http://php.net/manual/resource.php</a>
             for a full list of Resource Types)</span></li>
     </ul>
     
-	<h3>Name</h3>
+    <h3>Name</h3>
     <ul>
         <li>
-	        <span class="">Variable names should suggest a
+            <span class="">Variable names should suggest a
         property or noun.</span> UserName, Width, etc.</li>
         <li>
-	        <span class="">Names should be descriptive, but
+            <span class="">Names should be descriptive, but
         also concise.</span> Wherever possible, keep variable names to under 3 
         words or 15 characters but be prepared to sacrifice a few extra 
         characters to improve clarity.
@@ -536,15 +536,15 @@
     
     <hr/>
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />The <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type"><a xmlns:dct="http://purl.org/dc/terms/" href="http://pother.ca/VariableNamingConvention/" rel="dct:source">Variable Naming Convention for PHP</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://pother.ca/" property="cc:attributionName" rel="cc:attributionURL">Ben Peachey</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="https://twitter.com/sanderkrause" property="cc:attributionName" rel="cc:attributionURL">Sander Krause</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-	<p>
-		To link to it from code, the following header is recommended:
-	</p>
-	<code><pre>
+    <p>
+        To link to it from code, the following header is recommended:
+    </p>
+    <code><pre>
     /**
      * Note: The variable naming scheme used in this code is an adaption of 
      * Systems Hungarian which is explained at http://pother.ca/VariableNamingConvention/
      */
-	 </pre></code>
+     </pre></code>
     <script>
         $('span.main').each(function(){
             var $this, sText, sReplacement;
