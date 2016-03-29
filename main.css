@@ -21,14 +21,23 @@ a {
     color: #000;
 }
 
-h1, h2, h3, h4, .main {
+body {
     font-family: 'Droid Sans', Verdana, sans-serif;
     font-weight: normal;
 }
-h3 {
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
     border-top: 1px solid;
-    margin: 0-1em;
-    padding: 0.5em 1em;
+    margin: 0 0 0 -0.7em;
+    padding: 1em 0.7em 0 0.7em;
     width: 100%;
 }
 
@@ -49,62 +58,21 @@ svg {
     border-radius: 0.5em;
 }
 
-/* All CSS mouse-over state*/
-.reasoning {
-    color: #666;
-    background-color: #FFF5CC;
-    display: inline;
-    font-style: italic;
-}
-
-.reasoning span {
-    border-bottom: 1px dashed;
-    display: none;
-}
-
-.reasoning span.handle {
-    display: inline;
-}
-
-.reasoning:hover span {
-    border-bottom: none;
-    display: inline;
-}
-
-.reasoning:hover span.handle {
-    display: none;
-}
-
 .small {
     font-size: 0.8em;
 }
 
+sup {
+    display: block;
+    text-align: right;
+    font-size: small;
+}
+
 /* SVG styles */
-.line {
-    fill: none;
-    stroke: #332900;
-}
-
-filled {
-    fill: #332900;
-    stroke: none;
-}
-
-text {
-    font-family: Verdana, sans-serif;
-    font-size: 12px;
-    fill: #4D3D00;
-}
-
 text.terminal {
     font-family: Verdana, Sans-serif;
     font-size: 12px;
     fill: #4D3D00;
-}
-
-rect, circle, polygon {
-    fill: #332900;
-    stroke: #332900;
 }
 
 .terminal {
@@ -112,19 +80,60 @@ rect, circle, polygon {
     stroke: #332900;
 }
 
-.nonterminal {
-    fill: #FFEB99;
-    stroke: #332900;
+/* Tables */
+table {
+    border-spacing: 0;
+    width: 100%;
 }
 
-.text {
-    fill: none;
-    stroke: none;
+thead th {
+    background-color: #FFCC00;
+    border: 0.1em #FFF5CC solid;
+    border-bottom-color: black;
+    font-size: 80%;
 }
 
-.regexp {
-    fill: #FFF5CC;
-    stroke: #332900;
+
+tbody td {
+    border: 0.1em #FFF5CC solid;
+    border-bottom-color: black;
+    padding: 0.35em;
+    /*text-align: center;*/
+    vertical-align: baseline;
+}
+
+th {
+    padding: 0.5em;
+}
+
+li sup, td sup {
+    display: inline;
+}
+
+tbody td:nth-child(2) {
+    border-right: 1px solid;
+}
+
+.example-table thead th {
+}
+
+.example-table tbody td:first-child {
+    font-weight: bold;
+    text-align: right;
+    border-right: 1px solid;
+    font-size: 80%;
+}
+
+
+/* Extra classes */
+.highlight, code {
+    color: rgb(234, 34, 43);
+    background-color: rgb(234, 234, 234);
+    padding: 0.25em 0.5em;
+}
+
+.potherca {
+    text-decoration: none;
 }
 
 /*EOF*/
