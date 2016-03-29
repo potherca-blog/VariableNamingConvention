@@ -11,25 +11,45 @@ title: Variable Naming Convention
 
 ## Introduction
 
-For variables we use a derived form of Systems [Hungarian notation]
-that consist of 3 parts: the scope, type and name of a variable.
+This document explains the naming convention meant to be used with 
+dynamic and/or weakly typed languages (as defined in [the Typing 
+Quadrant on the Cunningham Wiki]) such as PHP, Javascript, Perl, and Bash.
 
-<pre class="">$<span class="small scope">scope_</span><span class="small type">type</span>VarName</pre>
-
-For variables in a closed scope we don't need a scope flag, so
-they would be named thusly:
-<pre class="">$<span class="small type">type</span>VarName</pre>
+The idea behind the coding convention is that a developer should be able 
+to _**see**_ when something is wrong. Either when something from another 
+scope is used without validation (parameters in public methods, for 
+instance) or when a certain type is addressed as though it were another 
+type.
 
 ## Stating the use of this Convention
 
 To link to this convention from code, the following header is recommended:
 
     /**
-     * Note: The variable naming scheme used in this code is an adaption of 
+     * @NOTE: The variable naming scheme used in this code is an adaption of
      * Systems Hungarian which is explained at http://pother.ca/VariableNamingConvention/
      */
 
 ## The Convention
+
+The convention used for variables is a derived form of Systems 
+[Hungarian notation] that consist of a 3 part prefix: the Scope of a 
+variable, a Delimiter, and the Type of a variable.
+
+For variables in a closed scope (usually a function) the Scope and 
+Delimiter are omitted and only the Type is prefixed. 
+
+A delimiter is added in order to separate the scope from the rest of the 
+name. This delimiter is a conscious eyesore to make variables from other 
+scopes stand out, as using variables from another scope can lead to 
+painful situations. 
+
+Some languages require a variable name to start with a [sigil]. For 
+developers used to such a language, Hungarian Notation will feel more 
+natural than for developers used to languages that do not require sigils.
+
+The letters used to denote the Scope and Type are explained in the 
+"Scope" and "Type" sections below.
 
 ### Scope
 
@@ -167,6 +187,8 @@ so by [Sander Krause] in 2009.
 [GitHub tag badge]: https://img.shields.io/github/tag/potherca/VariableNamingConvention.svg
 [GitHub latest release]: https://github.com/Potherca/VariableNamingConvention/releases/latest
 [Hungarian notation]: http://en.wikipedia.org/wiki/Hungarian_notation
+[sigil]: https://en.wikipedia.org/wiki/Sigil_(computer_programming)
+[the Typing Quadrant on the Cunningham Wiki]: http://c2.com/cgi/wiki?TypingQuadrant
 [Potherca]: http://pother.ca/
 [Sander Krause]: https://twitter.com/sanderkrause
 [Railroad Diagram Generator]: http://bottlecaps.de/rr/ui
