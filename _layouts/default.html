@@ -28,16 +28,40 @@
     </footer>
 
     <script>
-        $('span.main').each(function(){
+        /* Add classes to plain elements to active PureCss Styles */
+        $('table').each(function (p_iIndex, p_oElement) {
+            var sText, $Element, sClass;
+
+            $Element = $(p_oElement);
+            sText = $Element.find('thead th:first-child').text();
+
+            switch (sText) {
+                case 'Language':
+                    sClass = 'example-table';
+                    break;
+                case 'Prefix':
+                    sClass = 'scope-table';
+                    break;
+            }
+
+            $Element .addClass(sClass);
+        });
+
+        /* Wrap letters in SVG to match the Syntax Diagram */
+        $('tbody td:first-child').each(function(){
             var $this, sText, sReplacement;
             $this = $(this);
             sText = $this.text();
-            sReplacement = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="28">'
+            if (sText.length === 1) {
+                sReplacement = '<td><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="28">'
                         + '<rect x="2" y="3" width="21" height="24" rx="6"/>'
                         + '<rect x="1" y="1" width="21" height="24" class="terminal" rx="6"/>'
                         + '<text class="terminal" x="8" y="16">' + sText + '</text>'
-                        + '</svg>';
+                        + '</svg></td>';
+
             $this.replaceWith($(sReplacement));
+            }
         });
     </script>
 </body>
+</html>
