@@ -150,12 +150,15 @@ for a full list of Resource Types)</span>
 
 ### Name
 
-- <span class="">Variable names should suggest a
-property or noun.</span> UserName, Width, etc.
-- <span class="">Names should be descriptive, but
-also concise.</span> Wherever possible, keep variable names to under 3 
-words or 15 characters but be prepared to sacrifice a few extra 
-characters to improve clarity.
+The "Name" part of a variable should describe what the variable is in 
+the problem domain it represents. Be as descriptive as possible but 
+hold these two rules of thumb in the back of your head when coming up
+with a name:
+
+- Variable names should suggest a property or noun. UserName, Width, etc.
+- Names should be descriptive, but also concise. Wherever possible, keep 
+variable names to under 3 words or 15 characters but  be prepared to 
+sacrifice a few extra characters to improve clarity.
 
 ##  Syntax Diagram
 
