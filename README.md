@@ -51,6 +51,21 @@ natural than for developers used to languages that do not require sigils.
 The letters used to denote the Scope and Type are explained in the 
 "Scope" and "Type" sections below.
 
+For the various languages this convention pertains to this gives us:
+
+|  Language  |  Example  |      Sigil       |       Scope     |  Delimiter  |  Type  | Name |
+| ---------- | --------- | ---------------- | --------------- | ----------- | ------ | ---- |
+| BASH       | `$g_xFoo` | `$`              | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
+| Javascript | `g_xFoo`  |                  | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
+| Perl       | `$g_xFoo` | `$`/`@`/`%`/`&`  | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
+| PHP        | `$g_xFoo` | `$`              | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
+
+<small>
+    Strictly speaking the `$` character used in Bash isn't truly a sigil 
+    but  "an unary operator for lexical indirection". The effect, 
+    however, is much the same.
+</small>
+
 ### Scope
 
 To help identify where variables come from and for easier
