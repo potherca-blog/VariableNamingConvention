@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: Variable Naming Convention
+title: Variable Naming Convention for weak and/or dynamic typed languages
 ---
 
 [![Project Stage Badge: Production Ready][project-stage-image]][project-stage-badge]
