@@ -68,9 +68,10 @@ For the various languages this convention pertains to this gives us:
 
 ### Scope
 
-To help identify where variables come from and for easier
-fetching of name-lists in scope-aware editors, we prepend a
-scope flag to variables that aren't in a function/method's closed scope.
+To help identify where variables come from and for easier fetching of 
+name-lists in scope-aware editors, a scope flag is prefixed to variables 
+that aren't in a function/method's closed scope.
+
 Available flags for the scope are:
 
 - <span class="main">g</span> for global variables <span
