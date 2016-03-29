@@ -4,6 +4,7 @@ title: Variable Naming Convention
 ---
 
 [![Project Stage Badge: Production Ready][project-stage-image]][project-stage-badge]
+[![GitHub tag][GitHub tag badge]][GitHub latest release]
 
 * auto-gen TOC:
 {:toc}
@@ -156,6 +157,8 @@ Putting all of this together we get the following syntax diagram:
 
 [project-stage-badge]: http://bl.ocks.org/potherca/raw/a2ae67caa3863a299ba0
 [project-stage-image]: http://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg 
+[GitHub tag badge]: https://img.shields.io/github/tag/potherca/VariableNamingConvention.svg
+[GitHub latest release]: https://github.com/Potherca/VariableNamingConvention/releases/latest
 [Hungarian notation]: http://en.wikipedia.org/wiki/Hungarian_notation
 [Railroad Diagram Generator]: http://bottlecaps.de/rr/ui
 [Railroad Diagram]: http://pother.ca/VariableNamingConvention/syntax-diagram.svg
