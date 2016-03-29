@@ -5,6 +5,9 @@ title: Variable Naming Convention
 
 [![Project Stage Badge: Production Ready][project-stage-image]][project-stage-badge]
 
+* auto-gen TOC:
+{:toc}
+
 For variables we use a derived form of Systems [Hungarian notation]
 that consist of 3 parts: the scope, type and name of a variable.
 
