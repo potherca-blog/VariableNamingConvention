@@ -3,6 +3,8 @@ permalink: /
 title: Variable Naming Convention
 ---
 
+[![Project Stage Badge: Production Ready][project-stage-image]][project-stage-badge]
+
 For variables we use a derived form of Systems [Hungarian notation]
 that consist of 3 parts: the scope, type and name of a variable.
 
@@ -146,6 +148,8 @@ To link to it from code, the following header is recommended:
      * Systems Hungarian which is explained at http://pother.ca/VariableNamingConvention/
      */
 
+[project-stage-badge]: http://bl.ocks.org/potherca/raw/a2ae67caa3863a299ba0
+[project-stage-image]: http://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg 
 [Hungarian notation]: http://en.wikipedia.org/wiki/Hungarian_notation
 [Railroad Diagram Generator]: http://bottlecaps.de/rr/ui
 [Railroad Diagram]: http://pother.ca/VariableNamingConvention/syntax-diagram.svg
