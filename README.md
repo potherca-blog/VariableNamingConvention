@@ -74,80 +74,49 @@ that aren't in a function/method's closed scope.
 
 Available flags for the scope are:
 
-- <span class="main">g</span> for global variables <span
-        class="small">(These shouldn't really exist, 'cause we <em>really</em>
-    don't want any global var lying about. Use <code>$_SERVER</code>, <code>$_SESSION</code> or <code>$_SETTINGS</code>
-    instead) </span>
-- <span class="main">t</span> for localized temporary variables
-  <span class="small">(variables that are created only to be
-  temporaraly used and then overwritten or discarded, as often occurs in
-  loops.)
-- <span class="main">p</span> for a function/method parameter
-- <span class="main">m</span> for class members
+| Prefix | Scope | Rational |
+| ------ | ----- | -------- |
+| g | global | |
+| t | temporary variables | variables that are created only to be temporarily used and then overwritten or discarded, as often occurs in loops.
+| p | function parameters | Things from "the outside" can often _not_ be trusted. This prefix helps to indicate when values move across scopes. 
+| m | class members |
+
 
 ### Types
 
-Because PHP is a loosely typed language, undesired effects (and
-thus bugs) can easily arise if you do not check your var types properly.
-Because we don't want to have to skip back to the point where a var was
-set (and because we like readable code), we prepend a type flag to
-variables. Please be <em>very</em> aware of the fact that this flag is
-mostly a <span class="">hint</span> and can't be trusted blindly,
-even when taking our Best Practises into account. Available flags for
-variable types are:
+- More [information about types in PHP is available in the PHP manual](http://php.net/manual/en/language.types.intro.php)
+- More information about types in Javascript is available in [the MDN page on JavaScript data types and data structures](http://php.net/manual/en/language.types.intro.php)
+- More information about types in Bash is available in the Linux Documentation Project on the [Bash Guide page about Types of variables](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_01.html)
 
-#### Compound Types
+| Prefix |     Type     |  Language(s)  | Category  | Notes |
+| ------ | -------------| ------------- | --------- | ----- |
+| $      | jQuery Object| JS            | Other     | Only relevant when working with code that uses the jQuery Library. <sup>[1]</sup><sup>[2]</sup>
+| a      | Array        | BASH/JS/PHP   | Compound  |   |
+| b      | Boolean      | BASH/JS/PHP   | Scalar    |   |
+| c      | Callback     | BASH/JS/PHP   | Other     | A callback, also known as a Function.<sup>[3]</sup>
+| f      | " | " | " | "
+| d      | Double       | BASH/JS<sup>[4]</sup>/PHP   | Scalar    | A double, also know as a "Float", a floating-point number. |
+| i      | Integer      | BASH/JS<sup>[4]</sup>/PHP   | Scalar    |   |
+| j      | (reserved)   | JS            | Other     | Set aside just in case the `$` character (for jQuery Objects) is to be replaced. See <sup>[2]</sup>. |
+| m      | Mixed        | BASH/JS/PHP   | Other     |   |
+| n      | Numeric      | BASH/JS/PHP   | Scalar    | Can be either an integer or a numeric string <sup>[5]</sup>.
+| o      | Object       | JS/PHP        | Compound  |   |
+| r      | Resource     | PHP           | Other     |   |
+| s      | String       | BASH/JS/PHP   | Scalar    |   |
+| u      | Unknown      | BASH/JS/PHP   | Other     |   |
 
-- <span class="main">a</span> for an <strong>Array</strong>
-- <span class="main">e</span> for an <strong>Exception</strong>
-  <div class="reasoning"><span class="handle">reasoning</span>
-  <span>
-  Dispite the fact that Exceptions are objects we feel they differ
-  enought from "normal" objects to validate their own type.
-  </span>
-  </div>
-- <span class="main">o</span> for an <strong>Object</strong> <span
-  class="small">(Please
-  note this means an instance of a class, not the class itself. If it has
-  not been constructed, it is <em>not</em> an object)</span>
+#### Notes
+1. In the Angular framework the dollar character `$` has other significant, denoting a variable, parameter, property, or method that belongs to the core of Angular and prevent elements from being iterated (or interpreted) in certain directives.
+2. The fact that this character can lead to confusion as it is a sigil in other languages has lead to the idea that it might be better to use `j` for jQuery objects instead. That idea is still under revision.
+3. In Bash this refers to variables declared with the `-f` flag.
+4. Javascript only has one "Number" type which is used for both floating-point numbers and integers
+5. A string that has a value that represents an integer or double.
 
-#### Scalar Types
-
-- <span class="main">u</span> for an
-    <strong>unknown</strong> type <span
-        class="small">(this should <em>only</em> be used for skeleton
-    methods where it has not yet been decided what type a parameter should
-    be.</span>
-- <span class="main">v</span> for a
-    <strong>variant</strong> type <span
-        class="small">(used only when updating old/deprecated code to
-    the current coding convention. Newer code should adhere to the rule
-    "Use type safe coding") </span>
-- <span class="main">n</span> for a <strong>numeric</strong> string (an
-                                integer /
-                                double / decimal / float represented as a
-                                string)
-    <div class="reasoning"><span class="handle">reasoning</span> <span>Because
-    PHP is a loosely type cast language, any variable that needs to be an
-    integer or double should be type cast as such as early as possible in the
-    code. The use of <code>n</code> (numeric) anywhere in the bussiness logic
-    should be a warning that bad things might happen. (PHP interprets "1" and 1
-    pretty much the same for MOST situations, but the result may be different
-    than you think. Avoid speculation. <em>Type cast</em>!)</span></div>
-- <span class="main">i</span> for an <strong>integer</strong> <span
-        class="small">(and
-    I do mean <em>integer</em>, not a numeric string!)</span>
-- <span class="main">d</span> for a <strong>decimal</strong>/double/float
-- <span class="main">b</span> for a <strong>boolean</strong>
-- <span class="main">s</span> for a <strong>string</strong>
-
-#### Special Types
-
-- <span class="main">r</span> for a <a
-    href="http://php.net/manual/language.types.resource.php"><strong>Resource</strong></a>
-<span class="small">(see <a
-        href="http://php.net/manual/resource.php">http://php.net/manual/resource.php</a>
-for a full list of Resource Types)</span>
+- Javascript (since ES6) has a "Symbol" type (also know as "Atoms" in other languages, similar to enumeration types).
+  In PHP the closest thing to this is using a [Constant](http://php.net/manual/en/language.constants.php).
+  The Bash equivalent is declaring a variable readonly with the `-r` flag.
+  As Symbols/Constants are the familiar exceptional to the rule and do
+  not adhere to this standard. they should be declared in so called SCREAMING_SNAKE_CASE<sup>[6](https://www.google.nl/search?hl=en&q=%22SCREAMING_SNAKE_CASE%22)</sup>
 
 ### Name
 
@@ -165,7 +134,7 @@ sacrifice a few extra characters to improve clarity.
 
 Putting all of this together we get the following syntax diagram:
 
-    Variable ::=  [gmpt]_[abdeinorsu]([A-Z][a-zA-Z0-9])
+    VariableName ::=  ( [$@%&]* ([gmpt] '_')*  [abcdfijmnorsu$] [A-Z] [a-zA-Z0-9]+ )
 
 ![Railroad Diagram][Railroad Diagram]
 
