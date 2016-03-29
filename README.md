@@ -129,7 +129,7 @@ characters to improve clarity.
     </span> by
     <a xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName" rel="cc:attributionURL"
        href="http://pother.ca/" class="potherca"
-    >Ben Peachey</a> and
+    >Potherca</a> and
     <a xmlns:cc="http://creativecommons.org/ns#" href="https://twitter.com/sanderkrause" property="cc:attributionName" rel="cc:attributionURL">
         Sander Krause
     </a> is licensed under the
