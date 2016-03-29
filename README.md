@@ -8,6 +8,8 @@ title: Variable Naming Convention
 * auto-gen TOC:
 {:toc}
 
+## Introduction
+
 For variables we use a derived form of Systems [Hungarian notation]
 that consist of 3 parts: the scope, type and name of a variable.
 
@@ -17,17 +19,16 @@ For variables in a closed scope we don't need a scope flag, so
 they would be named thusly:
 <pre class="">$<span class="small type">type</span>VarName</pre>
 
-##  Syntax Diagram
-<pre>
-                  scope     type         VarName
-    &darr; &darr; &darr;
-    <em>variable</em> ::= [<strong>gmpt</strong>]_[<strong>abdeinorsu</strong>](<strong>[A-Z][a-zA-Z0-9]*</strong>)
-</pre>
+## Stating the use of this Convention
 
+To link to this convention from code, the following header is recommended:
 
-![Railroad Diagram][Railroad Diagram]
+    /**
+     * Note: The variable naming scheme used in this code is an adaption of 
+     * Systems Hungarian which is explained at http://pother.ca/VariableNamingConvention/
+     */
 
-<sup>Generated using the [Railroad Diagram Generator]</sup>
+## The Convention
 
 ### Scope
 
@@ -47,7 +48,7 @@ Available flags for the scope are:
 - <span class="main">p</span> for a function/method parameter
 - <span class="main">m</span> for class members
 
-### Type
+### Types
 
 Because PHP is a loosely typed language, undesired effects (and
 thus bugs) can easily arise if you do not check your var types properly.
@@ -120,8 +121,17 @@ also concise.</span> Wherever possible, keep variable names to under 3
 words or 15 characters but be prepared to sacrifice a few extra 
 characters to improve clarity.
 
+##  Syntax Diagram
 
----
+Putting all of this together we get the following syntax diagram:
+
+    Variable ::=  [gmpt]_[abdeinorsu]([A-Z][a-zA-Z0-9])
+
+![Railroad Diagram][Railroad Diagram]
+
+<sup>Generated using the [Railroad Diagram Generator]</sup>
+
+## Copyright
 
 <p class="created-by">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
@@ -143,13 +153,6 @@ characters to improve clarity.
     </a>
     .
 </p>
-
-To link to it from code, the following header is recommended:
-
-    /**
-     * Note: The variable naming scheme used in this code is an adaption of 
-     * Systems Hungarian which is explained at http://pother.ca/VariableNamingConvention/
-     */
 
 [project-stage-badge]: http://bl.ocks.org/potherca/raw/a2ae67caa3863a299ba0
 [project-stage-image]: http://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg 
