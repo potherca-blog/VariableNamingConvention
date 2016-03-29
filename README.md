@@ -148,4 +148,4 @@ To link to it from code, the following header is recommended:
 
 [Hungarian notation]: http://en.wikipedia.org/wiki/Hungarian_notation
 [Railroad Diagram Generator]: http://bottlecaps.de/rr/ui
-[Railroad Diagram]: syntax-diagram.svg
+[Railroad Diagram]: http://pother.ca/VariableNamingConvention/syntax-diagram.svg
