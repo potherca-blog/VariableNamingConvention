@@ -132,6 +132,13 @@ Putting all of this together we get the following syntax diagram:
 
 <sup>Generated using the [Railroad Diagram Generator]</sup>
 
+## History
+
+This convention has been evolving ever since [Potherca] started 
+programming Perl in the min-nineties and branched out into PHP in the 
+early noughties. Yet it was never put into writing until encourage to do 
+so by [Sander Krause] in 2009.
+
 ## Copyright
 
 <p class="created-by">
@@ -160,5 +167,7 @@ Putting all of this together we get the following syntax diagram:
 [GitHub tag badge]: https://img.shields.io/github/tag/potherca/VariableNamingConvention.svg
 [GitHub latest release]: https://github.com/Potherca/VariableNamingConvention/releases/latest
 [Hungarian notation]: http://en.wikipedia.org/wiki/Hungarian_notation
+[Potherca]: http://pother.ca/
+[Sander Krause]: https://twitter.com/sanderkrause
 [Railroad Diagram Generator]: http://bottlecaps.de/rr/ui
 [Railroad Diagram]: http://pother.ca/VariableNamingConvention/syntax-diagram.svg
