@@ -143,7 +143,7 @@ Putting all of this together we get the following syntax diagram:
 ## History
 
 This convention has been evolving ever since [Potherca] started 
-programming Perl in the min-nineties and branched out into PHP in the 
+programming Perl in the mid-nineties and branched out into PHP in the 
 early noughties. Yet it was never put into writing until encourage to do 
 so by [Sander Krause] in 2009.
 
