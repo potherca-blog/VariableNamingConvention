@@ -27,7 +27,7 @@ To link to this convention from code, the following header is recommended:
 
     /**
      * @NOTE: The variable naming scheme used in this code is an adaption of
-     * Systems Hungarian which is explained at http://pother.ca/VariableNamingConvention/
+     * Systems Hungarian which is explained at http://blog.pother.ca/VariableNamingConvention/
      */
 
 ## The Convention
@@ -172,12 +172,12 @@ so by [Sander Krause] in 2009.
 
 [project-stage-badge]: http://bl.ocks.org/potherca/raw/a2ae67caa3863a299ba0
 [project-stage-image]: http://img.shields.io/badge/Project%20Stage-Production%20Ready-brightgreen.svg 
-[GitHub tag badge]: https://img.shields.io/github/tag/potherca/VariableNamingConvention.svg
-[GitHub latest release]: https://github.com/Potherca/VariableNamingConvention/releases/latest
+[GitHub tag badge]: https://img.shields.io/github/tag/potherca-blog/VariableNamingConvention.svg
+[GitHub latest release]: https://github.com/potherca-blog/VariableNamingConvention/releases/latest
 [Hungarian notation]: http://en.wikipedia.org/wiki/Hungarian_notation
 [sigil]: https://en.wikipedia.org/wiki/Sigil_(computer_programming)
 [the Typing Quadrant on the Cunningham Wiki]: http://c2.com/cgi/wiki?TypingQuadrant
-[Potherca]: http://pother.ca/
+[Potherca]: https://pother.ca/
 [Sander Krause]: https://twitter.com/sanderkrause
 [Railroad Diagram Generator]: http://bottlecaps.de/rr/ui
-[Railroad Diagram]: http://pother.ca/VariableNamingConvention/syntax-diagram.svg
+[Railroad Diagram]: http://blog.pother.ca/VariableNamingConvention/syntax-diagram.svg
