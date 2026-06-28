@@ -89,16 +89,14 @@ Available flags for the scope are:
 
 | Prefix | Type          | Language(s)               | Category | Notes                                                                                                |
 |--------|---------------|---------------------------|----------|------------------------------------------------------------------------------------------------------|
-| $      | jQuery Object | JS                        | Other    | Only relevant when working with code that uses the jQuery Library. <sup>[1]</sup><sup>[2]</sup>      |
 | a      | Array         | BASH/JS/PHP               | Compound |                                                                                                      |
 | b      | Boolean       | BASH/JS/PHP               | Scalar   |                                                                                                      |
-| c      | Callback      | BASH/JS/PHP               | Other    | A callback, also known as a Function.<sup>[3]</sup>                                                  |
+| c      | Callback      | BASH/JS/PHP               | Other    | A callback, also known as a Function.<sup>[1]</sup>                                                  |
 | f      | "             | "                         | "        | "                                                                                                    |
-| d      | Double        | BASH/JS<sup>[4]</sup>/PHP | Scalar   | A double, also know as a "Float", a floating-point number.                                           |
-| i      | Integer       | BASH/JS<sup>[4]</sup>/PHP | Scalar   |                                                                                                      |
-| j      | (reserved)    | JS                        | Other    | Set aside just in case the `$` character (for jQuery Objects) is to be replaced. See <sup>[2]</sup>. |
+| d      | Double        | BASH/JS<sup>[2]</sup>/PHP | Scalar   | A double, also know as a "Float", a floating-point number.                                           |
+| i      | Integer       | BASH/JS<sup>[2]</sup>/PHP | Scalar   |                                                                                                      |
 | m      | Mixed         | BASH/JS/PHP               | Other    |                                                                                                      |
-| n      | Numeric       | BASH/JS/PHP               | Scalar   | Can be either an integer or a numeric string <sup>[5]</sup>.                                         |
+| n      | Numeric       | BASH/JS/PHP               | Scalar   | Can be either an integer or a numeric string <sup>[3]</sup>.                                         |
 | o      | Object        | JS/PHP                    | Compound |                                                                                                      |
 | r      | Resource      | PHP                       | Other    |                                                                                                      |
 | s      | String        | BASH/JS/PHP               | Scalar   |                                                                                                      |
@@ -106,11 +104,9 @@ Available flags for the scope are:
 
 #### Notes
 
-1. In the Angular framework the dollar character `$` has other significant, denoting a variable, parameter, property, or method that belongs to the core of Angular and prevent elements from being iterated (or interpreted) in certain directives.
-2. The fact that this character can lead to confusion as it is a sigil in other languages has lead to the idea that it might be better to use `j` for jQuery objects instead. That idea is still under revision.
-3. In Bash this refers to variables declared with the `-f` flag.
-4. Javascript only has one "Number" type which is used for both floating-point numbers and integers
-5. A string that has a value that represents an integer or double.
+1. In Bash this refers to variables declared with the `-f` flag.
+2. Javascript only has one "Number" type which is used for both floating-point numbers and integers
+3. A string that has a value that represents an integer or double.
 
 - Javascript (since ES6) has a "Symbol" type (also know as "Atoms" in other languages, similar to enumeration types).
   In PHP the closest thing to this is using a [Constant](http://php.net/manual/en/language.constants.php).
@@ -134,7 +130,7 @@ sacrifice a few extra characters to improve clarity.
 
 Putting all of this together we get the following syntax diagram:
 
-    VariableName ::=  ( [$@%&]* ([gmpt] '_')*  [abcdfijmnorsu$] [A-Z] [a-zA-Z0-9]+ )
+    VariableName ::=  ( [$@%&]* ([gmpt] '_')*  [abcdfimnorsu] [A-Z] [a-zA-Z0-9]+ )
 
 ![Railroad Diagram][Railroad Diagram]
 
