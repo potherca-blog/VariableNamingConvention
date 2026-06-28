@@ -53,16 +53,16 @@ The letters used to denote the Scope and Type are explained in the
 
 For the various languages this convention pertains to this gives us:
 
-|  Language  |  Example  |      Sigil       |       Scope     |  Delimiter  |  Type  | Name |
-| ---------- | --------- | ---------------- | --------------- | ----------- | ------ | ---- |
-| BASH       | `$g_xFoo` | `$`              | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
-| Javascript | `g_xFoo`  |                  | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
-| Perl       | `$g_xFoo` | `$`/`@`/`%`/`&`  | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
-| PHP        | `$g_xFoo` | `$`              | `g`/`m`/`p`/`t` | `_`         | `x`    | Foo  |
+| Language   | Example   | Sigil           | Scope           | Delimiter | Type | Name |
+|------------|-----------|-----------------|-----------------|-----------|------|------|
+| BASH       | `$g_xFoo` | `$`             | `g`/`m`/`p`/`t` | `_`       | `x`  | Foo  |
+| Javascript | `g_xFoo`  |                 | `g`/`m`/`p`/`t` | `_`       | `x`  | Foo  |
+| Perl       | `$g_xFoo` | `$`/`@`/`%`/`&` | `g`/`m`/`p`/`t` | `_`       | `x`  | Foo  |
+| PHP        | `$g_xFoo` | `$`             | `g`/`m`/`p`/`t` | `_`       | `x`  | Foo  |
 
 <small>
     Strictly speaking the `$` character used in Bash isn't truly a sigil
-    but  "an unary operator for lexical indirection". The effect,
+    but "an unary operator for lexical indirection". The effect,
     however, is much the same.
 </small>
 
@@ -74,13 +74,12 @@ that aren't in a function/method's closed scope.
 
 Available flags for the scope are:
 
-| Prefix | Scope | Rational |
-| ------ | ----- | -------- |
-| g | global | |
-| t | temporary variables | variables that are created only to be temporarily used and then overwritten or discarded, as often occurs in loops.
-| p | function parameters | Things from "the outside" can often _not_ be trusted. This prefix helps to indicate when values move across scopes.
-| m | class members |
-
+| Prefix | Scope               | Rational                                                                                                            |
+|--------|---------------------|---------------------------------------------------------------------------------------------------------------------|
+| g      | global              |                                                                                                                     |
+| t      | temporary variables | variables that are created only to be temporarily used and then overwritten or discarded, as often occurs in loops. |
+| p      | function parameters | Things from "the outside" can often _not_ be trusted. This prefix helps to indicate when values move across scopes. |
+| m      | class members       |                                                                                                                     |
 
 ### Types
 
@@ -88,24 +87,25 @@ Available flags for the scope are:
 - More information about types in Javascript is available in [the MDN page on JavaScript data types and data structures](http://php.net/manual/en/language.types.intro.php)
 - More information about types in Bash is available in the Linux Documentation Project on the [Bash Guide page about Types of variables](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_01.html)
 
-| Prefix |     Type     |  Language(s)  | Category  | Notes |
-| ------ | -------------| ------------- | --------- | ----- |
-| $      | jQuery Object| JS            | Other     | Only relevant when working with code that uses the jQuery Library. <sup>[1]</sup><sup>[2]</sup>
-| a      | Array        | BASH/JS/PHP   | Compound  |   |
-| b      | Boolean      | BASH/JS/PHP   | Scalar    |   |
-| c      | Callback     | BASH/JS/PHP   | Other     | A callback, also known as a Function.<sup>[3]</sup>
-| f      | " | " | " | "
-| d      | Double       | BASH/JS<sup>[4]</sup>/PHP   | Scalar    | A double, also know as a "Float", a floating-point number. |
-| i      | Integer      | BASH/JS<sup>[4]</sup>/PHP   | Scalar    |   |
-| j      | (reserved)   | JS            | Other     | Set aside just in case the `$` character (for jQuery Objects) is to be replaced. See <sup>[2]</sup>. |
-| m      | Mixed        | BASH/JS/PHP   | Other     |   |
-| n      | Numeric      | BASH/JS/PHP   | Scalar    | Can be either an integer or a numeric string <sup>[5]</sup>.
-| o      | Object       | JS/PHP        | Compound  |   |
-| r      | Resource     | PHP           | Other     |   |
-| s      | String       | BASH/JS/PHP   | Scalar    |   |
-| u      | Unknown      | BASH/JS/PHP   | Other     |   |
+| Prefix | Type          | Language(s)               | Category | Notes                                                                                                |
+|--------|---------------|---------------------------|----------|------------------------------------------------------------------------------------------------------|
+| $      | jQuery Object | JS                        | Other    | Only relevant when working with code that uses the jQuery Library. <sup>[1]</sup><sup>[2]</sup>      |
+| a      | Array         | BASH/JS/PHP               | Compound |                                                                                                      |
+| b      | Boolean       | BASH/JS/PHP               | Scalar   |                                                                                                      |
+| c      | Callback      | BASH/JS/PHP               | Other    | A callback, also known as a Function.<sup>[3]</sup>                                                  |
+| f      | "             | "                         | "        | "                                                                                                    |
+| d      | Double        | BASH/JS<sup>[4]</sup>/PHP | Scalar   | A double, also know as a "Float", a floating-point number.                                           |
+| i      | Integer       | BASH/JS<sup>[4]</sup>/PHP | Scalar   |                                                                                                      |
+| j      | (reserved)    | JS                        | Other    | Set aside just in case the `$` character (for jQuery Objects) is to be replaced. See <sup>[2]</sup>. |
+| m      | Mixed         | BASH/JS/PHP               | Other    |                                                                                                      |
+| n      | Numeric       | BASH/JS/PHP               | Scalar   | Can be either an integer or a numeric string <sup>[5]</sup>.                                         |
+| o      | Object        | JS/PHP                    | Compound |                                                                                                      |
+| r      | Resource      | PHP                       | Other    |                                                                                                      |
+| s      | String        | BASH/JS/PHP               | Scalar   |                                                                                                      |
+| u      | Unknown       | BASH/JS/PHP               | Other    |                                                                                                      |
 
 #### Notes
+
 1. In the Angular framework the dollar character `$` has other significant, denoting a variable, parameter, property, or method that belongs to the core of Angular and prevent elements from being iterated (or interpreted) in certain directives.
 2. The fact that this character can lead to confusion as it is a sigil in other languages has lead to the idea that it might be better to use `j` for jQuery objects instead. That idea is still under revision.
 3. In Bash this refers to variables declared with the `-f` flag.
