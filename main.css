@@ -1,8 +1,15 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 
+:root {
+    --color-yellow-light: #FFF5CC;
+    --color-yellow: #FFCC00;
+    --color-brown: #4D3D00;
+    --color-black: #000;
+}
+
 html {
-    background: #FFF5CC;
+    background: var(--color-yellow-light);
 }
 
 body {
@@ -18,7 +25,7 @@ body {
 }
 
 a {
-    color: #000;
+    color: var(--color-black);
 }
 
 body {
@@ -46,8 +53,8 @@ svg {
 }
 
 .main {
-    background-color: #FFCC00;
-    border: 1px solid black;
+    background-color: var(--color-yellow);
+    border: 1px solid var(--color-black);
     display: inline-block;
     height: 1.2em;
     line-height: 1em;
@@ -70,14 +77,14 @@ sup {
 
 /* SVG styles */
 text.terminal {
+    fill: var(--color-brown);
     font-family: Verdana, Sans-serif;
     font-size: 12px;
-    fill: #4D3D00;
 }
 
 .terminal {
-    fill: #FFCC00;
-    stroke: #332900;
+    fill: var(--color-yellow);
+    stroke: var(--color-brown);
 }
 
 /* Tables */
@@ -87,16 +94,16 @@ table {
 }
 
 thead th {
-    background-color: #FFCC00;
-    border: 0.1em #FFF5CC solid;
-    border-bottom-color: black;
+    background-color: var(--color-yellow);
+    border: 0.1em var(--color-yellow-light) solid;
+    border-bottom-color: var(--color-black);
     font-size: 80%;
 }
 
 
 tbody td {
-    border: 0.1em #FFF5CC solid;
-    border-bottom-color: black;
+    border: 0.1em var(--color-yellow-light) solid;
+    border-bottom-color: var(--color-black);
     padding: 0.35em;
     /*text-align: center;*/
     vertical-align: baseline;
