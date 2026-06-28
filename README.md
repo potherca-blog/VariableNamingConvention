@@ -112,7 +112,9 @@ Available flags for the scope are:
   In PHP the closest thing to this is using a [Constant](http://php.net/manual/en/language.constants.php).
   The Bash equivalent is declaring a variable readonly with the `-r` flag.
   As Symbols/Constants are the familiar exceptional to the rule and do
-  not adhere to this standard. they should be declared in so called SCREAMING_SNAKE_CASE<sup>[6](https://www.google.nl/search?hl=en&q=%22SCREAMING_SNAKE_CASE%22)</sup>
+  not adhere to this standard. they should be declared in so called SCREAMING_SNAKE_CASE<sup>[4]</sup>
+
+[4]: https://www.google.nl/search?hl=en&q=%22SCREAMING_SNAKE_CASE%22
 
 ### Name
 
